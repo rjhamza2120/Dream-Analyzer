@@ -3,7 +3,7 @@ from gtts import gTTS
 import io
 import anthropic
 
-api_key = st.secrets['Anthropic_Api_Key']
+api_key = st.secrets['anthropic_api_key']
 
 # Initialize Anthropics client
 client = anthropic.Anthropic(api_key=api_key)
