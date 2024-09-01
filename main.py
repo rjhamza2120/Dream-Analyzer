@@ -3,7 +3,7 @@ from gtts import gTTS
 import io
 import anthropic
 
-api_key = st.secrets["anthropic_api_key"]
+api_key = st.secrets['Anthropic_Api_Key']
 
 # Initialize Anthropics client
 client = anthropic.Anthropic(api_key=api_key)
@@ -53,26 +53,34 @@ def main():
     st.markdown("""
         <style>
         body {
-            background-color: #d0f0c0; /* Parrot green background for the whole page */
-            color: #333333; /* Dark text color for readability */
+            background-color: #f0f8ff; /* Alice blue background for a soft look */
+            color: #333333; /* Dark grey text for readability */
         }
         .stApp {
-            background-color: #d0f0c0; /* Parrot green background for the main app container */
+            background-color: #f0f8ff; /* Consistent Alice blue for the main app container */
         }
         .stTextInput textarea {
             background-color: #ffffff; /* White background for the text area */
-            border: 2px solid #4CAF50; /* Parrot green border for visibility */
-            color: #333333; /* Dark text color inside the text area */
+            border: 2px solid #1e90ff; /* Dodger blue border for high visibility */
+            color: #1e90ff; /* Dodger blue text color inside the text area */
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.5); /* Glowing blue shadow to enhance visibility */
+        }
+        .stTextInput textarea:focus {
+            border: 2px solid #4169e1; /* Royal blue border when focused */
+            box-shadow: 0 0 15px rgba(65, 105, 225, 0.8); /* Stronger blue shadow when focused */
         }
         .stButton>button {
-            background-color: #4CAF50; /* Parrot green button background color */
+            background-color: #1e90ff; /* Dodger blue button background color */
             color: white; /* Button text color */
+            border-radius: 12px; /* Rounded corners for buttons */
+            padding: 10px 20px; /* Add some padding to the buttons */
+            font-size: 16px; /* Increase font size */
         }
         .stButton>button:hover {
-            background-color: #45a049; /* Darker parrot green button background color on hover */
+            background-color: #4169e1; /* Royal blue button background color on hover */
         }
         h1, h2, h3 {
-            color: #4CAF50; /* Parrot green color for headers */
+            color: #1e90ff; /* Dodger blue color for headers */
         }
         .stAudio {
             text-align: right; /* Align audio player to the right */
@@ -93,10 +101,10 @@ def main():
     )
     
     # Main content
-    st.title("Dream Chronicles")
+    st.title("Dream Chronicles🌀")
 
     # Input text area for dream description
-    dream_input = st.text_area("Tell Me About Your Dream:",height=150)
+    dream_input = st.text_area("Tell Me About Your Dream:", height=150)
 
     if st.button('Generate'):
         if dream_input:
